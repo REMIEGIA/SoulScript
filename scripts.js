@@ -1,11 +1,11 @@
 // 🔹 Firebase Config
-const firebaseConfig = {
-  apiKey: "AIzaSyXXXXXXX",
-  authDomain: "your-project-id.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "123456789012",
-  appId: "1:123456789012:web:abcdef123456"
+export const firebaseConfig = {
+  apiKey: "AIzaSyDdm5p5IZQw3za8nOoSZguPBQAGheZRE_I",
+  authDomain: "soulscript-becb3.firebaseapp.com",
+  projectId: "soulscript-becb3",
+  storageBucket: "soulscript-becb3.appspot.com",
+  messagingSenderId: "615706588661",
+  appId: "1:615706588661:web:c2bd59d8254d610ce41cbc"
 };
 
 // 🔹 Initialize Firebase
@@ -17,9 +17,10 @@ import {
   onAuthStateChanged, 
   signOut 
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import { firebaseConfig } from './scripts.js'; // import your config
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 // --- Login Page Functions --- 
 export function registerUser() {
