@@ -1,4 +1,4 @@
-/* Reset some basic styles */
+/* --- General Styles --- */
 * {
   margin: 0;
   padding: 0;
@@ -6,30 +6,113 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, 'Segoe UI', sans-serif;
   line-height: 1.6;
-  background-color: #f5f5f5;
   color: #333;
-  padding: 20px;
 }
 
-header {
+/* --- Login Page Styles --- */
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
+body.login-page .login-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body.login-page h2 {
+  margin-bottom: 15px;
+  color: #4caf50;
+}
+
+body.login-page input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+body.login-page button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
   background-color: #4caf50;
   color: white;
-  padding: 40px 20px;
-  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-section {
-  margin: 30px 0;
+body.login-page button:hover {
+  background-color: #45a049;
+}
+
+/* --- Home Page Styles --- */
+body.home-page {
+  background-color: #f5f5f5;
   padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-footer {
+body.home-page header {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+body.home-page header button {
+  padding: 8px 16px;
+  margin-top: 10px;
+  background-color: #f44336;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+body.home-page header button:hover {
+  background-color: #d32f2f;
+}
+
+body.home-page section {
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+body.home-page section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+body.home-page footer {
   text-align: center;
   margin-top: 40px;
   color: #777;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  body.login-page .login-container {
+    width: 90%;
+  }
+
+  body.home-page section {
+    margin: 10px 0;
+  }
 }
