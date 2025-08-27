@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | My Website</title>
+  <title>My First Website</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home-page">
-
+<body>
   <header>
-    <h1>Welcome, User!</h1>
-    <p>This is your home page.</p>
-    <button id="logoutBtn">Logout</button>
+    <h1>Hi, I'm [Your Name]</h1>
+    <p>Welcome to my first website!</p>
+    <button onclick="logoutUser()">Logout</button>
   </header>
 
   <section>
     <h2>About Me</h2>
-    <p>This is a simple personal site for learning web development.</p>
+    <p>This is a simple personal site I'm building to learn web development.</p>
   </section>
 
   <section>
@@ -24,7 +23,7 @@
     <ul>
       <li>🌐 Learning HTML & CSS</li>
       <li>🚀 Hosting with GitHub Pages</li>
-      <li>🛠️ Building cool stuff!</li>
+      <li>🛠️ Building cool stuff soon!</li>
     </ul>
   </section>
 
@@ -32,14 +31,36 @@
     <p>Made with ❤️ in 2025</p>
   </footer>
 
-  <script type="module">
-    import { logoutUser, checkAuthRedirect } from './scripts.js';
+  <!-- Firebase -->
+<script type="module">
+  import { auth, checkAuthRedirect, logoutUser } from './scripts.js';
 
-    // Redirect to login if not authenticated
-    checkAuthRedirect(true);
+  // Redirect if not logged in
+  checkAuthRedirect(true);
 
-    // Logout button
-    document.getElementById("logoutBtn").addEventListener("click", logoutUser);
+  // Logout function for button
+  window.logoutUser = logoutUser;
+</script>
+
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // 🔹 Redirect back if not logged in
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "index.html"; 
+      }
+    });
+
+    // 🔹 Logout function
+    window.logoutUser = function() {
+      signOut(auth).then(() => {
+        alert("Logged out!");
+        window.location.href = "index.html";
+      });
+    }
   </script>
 </body>
 </html>
