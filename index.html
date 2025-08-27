@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+</head>
+<body>
+  <h2>Register</h2>
+  <input type="text" id="regEmail" placeholder="Email">
+  <input type="password" id="regPass" placeholder="Password">
+  <button onclick="registerUser()">Register</button>
+
+  <h2>Login</h2>
+  <input type="text" id="logEmail" placeholder="Email">
+  <input type="password" id="logPass" placeholder="Password">
+  <button onclick="loginUser()">Login</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword }
+      from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+
+    const firebaseConfig
