@@ -13,7 +13,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDdm5p5IZQw3za8nOoSZguPBQAGheZRE_I",
   authDomain: "soulscript-becb3.firebaseapp.com",
   projectId: "soulscript-becb3",
-  storageBucket: "soulscript-becb3.appspot.com",
+  storageBucket: "soulscript-becb3.firebasestorage.app",
   messagingSenderId: "615706588661",
   appId: "1:615706588661:web:c2bd59d8254d610ce41cbc"
 };
@@ -76,3 +76,4 @@ export function checkAuthRedirect(homePage = false) {
     }
   });
 }
+
