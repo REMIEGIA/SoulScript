@@ -1,36 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login | My Website</title>
+  <title>Login | SoulScript</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="login-page">
 
   <div class="login-container">
-<h2>Login</h2>
+    <h2>Login</h2>
     <input type="email" id="logEmail" placeholder="Email">
     <input type="password" id="logPass" placeholder="Password">
     <button id="loginBtn">Login</button>
-    <button id="registerBtn">Register</button>
-    <p id="logMsg"></p> <!-- message -->
+    <button id="toRegisterBtn">Register</button>
+    <p id="logMsg"></p>
   </div>
 
   <script type="module">
-    import { registerUser, loginUser, checkAuthRedirect } from './scripts.js';
-    
+    import { loginUser, checkAuthRedirect } from './scripts.js';
+
     // Redirect if already logged in
     checkAuthRedirect(false);
 
     // Button click events
-    document.getElementById("registerBtn").addEventListener("click", registerUser);
     document.getElementById("loginBtn").addEventListener("click", loginUser);
+    document.getElementById("toRegisterBtn").addEventListener("click", function() {
+      window.location.href = "register.html";
+    });
   </script>
 </body>
 </html>
-
-
-
-
