@@ -57,7 +57,7 @@ export function loginUser() {
   const email = document.getElementById("logEmail").value.trim();
   const password = document.getElementById("logPass").value.trim();
   // ------------------- Register -------------------
-document.getElementById("Register").addEventListener("click", function() {
+  const register = document.getElementById("Register").addEventListener("click", function() {
     window.location.href = "register.html";
 });
 
@@ -91,6 +91,7 @@ export function checkAuthRedirect(homePage = false) {
     }
   });
 }
+
 
 
 
