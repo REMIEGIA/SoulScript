@@ -40,7 +40,10 @@ export function registerUser() {
   }
 
   createUserWithEmailAndPassword(auth, email, password)
-    .then(() => showMessage("regMsg", "Registration successful! You can now log in.", false))
+    .then(() => {
+      alert("Registration successful! Please log in.");
+      window.location.href = "index.html";  // redirect to login page
+    })
     .catch(err => showMessage("regMsg", err.message));
 }
 
@@ -61,7 +64,10 @@ export function loginUser() {
 
 // ------------------- Logout -------------------
 export function logoutUser() {
-  signOut(auth).then(() => window.location.href = "index.html");
+  signOut(auth).then(() => {
+     alert("Logged out!");
+    window.location.href = "index.html";
+  });
 }
 
 // ------------------- Auth State Listener -------------------
@@ -76,4 +82,5 @@ export function checkAuthRedirect(homePage = false) {
     }
   });
 }
+
 
