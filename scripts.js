@@ -56,10 +56,6 @@ export function registerUser() {
 export function loginUser() {
   const email = document.getElementById("logEmail").value.trim();
   const password = document.getElementById("logPass").value.trim();
-  // ------------------- Register -------------------
-  const register = document.getElementById("Register").addEventListener("click", function() {
-    window.location.href = "register.html";
-});
 
   if (!email || !password) {
     showMessage("logMsg", "Email and password cannot be empty.");
@@ -67,6 +63,7 @@ export function loginUser() {
   }
 
   signInWithEmailAndPassword(auth, email, password)
+     // Redirect to home page after successful login
     .then(() => window.location.href = "home.html")
     .catch(err => showMessage("logMsg", err.message));
 }
@@ -91,6 +88,7 @@ export function checkAuthRedirect(homePage = false) {
     }
   });
 }
+
 
 
 
