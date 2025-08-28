@@ -24,7 +24,7 @@ body.register-page {
 }
 
 body.register-page .register-container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9); /* slightly transparent */
   padding: 30px;
   border-radius: 10px;
   width: 300px;
@@ -63,15 +63,23 @@ body.register-page button:hover {
 
 /* --- Login Page Styles --- */
 body.login-page {
+  background-image: url("images/background.jpg"); /* same background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f4f8;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8; */
 }
 
 body.login-page .login-container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9); /* slightly transparent */
   padding: 30px;
   border-radius: 10px;
   width: 300px;
@@ -166,3 +174,4 @@ body.home-page footer {
     margin: 10px 0;
   }
 }
+
