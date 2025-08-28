@@ -13,21 +13,21 @@
     <input type="email" id="regEmail" placeholder="Email">
     <input type="password" id="regPass" placeholder="Password">
     <button id="registerBtn">Register</button>
-    <p id="regMsg"></p> <!-- message -->
-    
+    <button id="toLoginBtn">Back to Login</button>
+    <p id="regMsg"></p>
   </div>
 
   <script type="module">
-    import { registerUser, loginUser, checkAuthRedirect } from './scripts.js';
-    
-   // Redirect if already logged in
-   // checkAuthRedirect(false);
+    import { registerUser, checkAuthRedirect } from './scripts.js';
+
+    // Redirect if already logged in
+    checkAuthRedirect(false);
 
     // Button click events
     document.getElementById("registerBtn").addEventListener("click", registerUser);
-    document.getElementById("loginBtn").addEventListener("click", loginUser);
+    document.getElementById("toLoginBtn").addEventListener("click", function() {
+      window.location.href = "index.html";
+    });
   </script>
 </body>
 </html>
-
-
