@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | SoulScript</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="login-page">
 
-  <div class="login-container">
-    <h2>Login</h2>
-    <input type="email" id="logEmail" placeholder="Email">
-    <input type="password" id="logPass" placeholder="Password">
-    <button id="loginBtn">Login</button>
-    <button id="toRegisterBtn">Register</button>
-    <p id="logMsg"></p>
-  </div>
+<div class="login-container">
+  <h2>Login</h2>
+  <input type="email" id="logEmail" placeholder="Email">
+  <input type="password" id="logPass" placeholder="Password">
+  <button id="loginBtn">Login</button>
+  <button id="toRegisterBtn">Register</button>
+  <p id="logMsg"></p>
+</div>
 
-  <script type="module">
-    import { loginUser, checkAuthRedirect } from './scripts.js';
+<script type="module">
+  import { loginUser, checkAuthRedirect } from './scripts.js';
 
-    // Redirect if already logged in
-    checkAuthRedirect(false);
+  // Redirect if already logged in
+  checkAuthRedirect(false);
 
-    // Button click events
-    document.getElementById("loginBtn").addEventListener("click", loginUser);
-    document.getElementById("toRegisterBtn").addEventListener("click", function() {
-      window.location.href = "register.html";
-    });
-  </script>
+  // Add event listeners
+  document.getElementById("loginBtn").addEventListener("click", loginUser);
+  document.getElementById("toRegisterBtn").addEventListener("click", () => {
+    window.location.href = "register.html";
+  });
+</script>
+
 </body>
 </html>
