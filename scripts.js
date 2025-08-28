@@ -1,3 +1,4 @@
+
 // scripts.js
 // ------------------- Firebase Config -------------------
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
@@ -65,6 +66,12 @@ export function loginUser() {
     .then(() => window.location.href = "home.html")
     .catch(err => showMessage("logMsg", err.message));
 }
+
+// ------------------- Register -------------------
+document.getElementById("Register").addEventListener("click", function() {
+    window.location.href = "register.html";
+});
+
 
 // ------------------- Logout -------------------
 export function logoutUser() {
