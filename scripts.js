@@ -41,10 +41,12 @@ export function registerUser() {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
-       // ✅ Sign out right after registration
-      signOut(auth).then(() => {
+      // ✅ Sign out right after registration so user isn’t auto-logged in
+      return signOut(auth);
+    })
+    .then(() => {
       alert("Registration successful! Please log in.");
-      window.location.href = "index.html";  // redirect to login page
+      window.location.href = "index.html"; // redirect to login page
     })
     .catch(err => showMessage("regMsg", err.message));
 }
@@ -84,6 +86,7 @@ export function checkAuthRedirect(homePage = false) {
     }
   });
 }
+
 
 
 
