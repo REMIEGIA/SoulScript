@@ -11,6 +11,56 @@ body {
   color: #333;
 }
 
+/* --- Register Page Styles --- */
+body.register-page {
+  background-image: url("images/background.jpg"); /* point to actual file */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body.register-page .register-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body.register-page h2 {
+  margin-bottom: 15px;
+  color: #4caf50;
+}
+
+body.register-page input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+body.register-page button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+body.register-page button:hover {
+  background-color: #45a049;
+}
+
 /* --- Login Page Styles --- */
 body.login-page {
   display: flex;
