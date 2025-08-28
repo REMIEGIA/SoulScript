@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | SoulScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="register-page">
+
+  <div class="register-container">
+    <h2>Register</h2>
+    <input type="email" id="regEmail" placeholder="Email">
+    <input type="password" id="regPass" placeholder="Password">
+    <button id="registerBtn">Register</button>
+    <p id="regMsg"></p> <!-- message -->
+    
+  </div>
+
+  <script type="module">
+    import { registerUser, loginUser, checkAuthRedirect } from './scripts.js';
+    
+   // Redirect if already logged in
+   // checkAuthRedirect(false);
+
+    // Button click events
+    document.getElementById("registerBtn").addEventListener("click", registerUser);
+    document.getElementById("loginBtn").addEventListener("click", loginUser);
+  </script>
+</body>
+</html>
+
+
