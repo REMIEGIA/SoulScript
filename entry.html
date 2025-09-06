@@ -10,6 +10,10 @@
   <!-- Replace text with <img src="images/logo.png" class="logo"> if you have a logo -->
   <div class="logo">SoulScript</div>
 
-  <script src="entry.js"></script>
+  <script type="module">
+  import { runEntryPage } from './scripts.js';
+  runEntryPage();
+</script>
 </body>
 </html>
+
