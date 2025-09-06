@@ -13,7 +13,7 @@ body {
 
 /* --- Register Page Styles --- */
 body.register-page {
-  background-image: url("images/background.jpg"); /* point to actual file */
+  background-image: url("images/logo3.jpg"); /* point to actual file */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -174,6 +174,7 @@ body.home-page footer {
     margin: 10px 0;
   }
 }
+
 
 
 
