@@ -9,9 +9,9 @@
 <body class="login-page">
 
   <!-- Entry Overlay -->
-  <div id="entryOverlay" class="entry-page">
+  <div id="entryOverlay">
     <img src="images/logo3.jpg" alt="SoulScript Logo" class="entry-logo">
-    <audio id="entrySound" src="audio/intro.mp3" autoplay muted playsinline></audio>
+    <audio id="entrySound" src="audio/intro.mp3" muted playsinline></audio>
   </div>
 
   <!-- Login Form -->
@@ -25,21 +25,27 @@
   </div>
 
   <script type="module">
-    import { loginUser, runEntryPage, checkAuthRedirect } from './scripts.js';
+    import { loginUser, checkAuthRedirect } from './scripts.js';
 
-    // Redirect if already logged in
     checkAuthRedirect(false);
 
-    // Add event listeners
     document.getElementById("loginBtn").addEventListener("click", loginUser);
     document.getElementById("toRegisterBtn").addEventListener("click", () => {
       window.location.href = "register.html";
     });
 
-    // Run entry animation
-    runEntryPage();
+    // Entry page logic (show once per session)
+    const overlay = document.getElementById('entryOverlay');
+    const audio = document.getElementById('entrySound');
+
+    if (!sessionStorage.getItem('entryShown')) {
+      sessionStorage.setItem('entryShown', 'true');
+      audio.play().catch(err => console.log('Autoplay blocked:', err));
+      setTimeout(() => overlay.classList.add('entry-hide'), 4000);
+    } else {
+      overlay.style.display = 'none';
+    }
   </script>
 
 </body>
 </html>
-
