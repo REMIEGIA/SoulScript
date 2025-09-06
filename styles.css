@@ -11,6 +11,37 @@ body {
   color: #333;
 }
 
+/* === Entry Page Styling (unique namespace: entry-) === */
+.entry-page {
+  margin: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.entry-logo {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  animation: entryFadeInZoom 2s ease forwards,
+             entryFadeOut 1s ease forwards 3s;
+}
+
+/* Entry animations */
+@keyframes entryFadeInZoom {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes entryFadeOut {
+  to { opacity: 0; transform: scale(1.2); }
+}
+
+
 /* --- Register Page Styles --- */
 body.register-page {
   background-image: url("images/logo3.jpg"); /* point to actual file */
@@ -174,6 +205,7 @@ body.home-page footer {
     margin: 10px 0;
   }
 }
+
 
 
 
