@@ -91,10 +91,21 @@ export function checkAuthRedirect(homePage = false) {
 
 // ------------------- Entry Page -------------------
 export function runEntryPage() {
+  const audio = document.getElementById("entrySound");
+
+  if (audio) {
+    // restart from beginning, unmute & play
+    audio.currentTime = 0;
+    audio.muted = false;
+    audio.play().catch(err => console.log("Autoplay blocked:", err));
+  }
+
+  // redirect after animation
   setTimeout(() => {
-    window.location.href = "index.html"; // your login page
-  }, 4000); // match your CSS animation timing
+    window.location.href = "index.html";
+  }, 4000); // same as CSS delay
 }
+
 
 
 
