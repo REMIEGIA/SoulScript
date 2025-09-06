@@ -89,6 +89,14 @@ export function checkAuthRedirect(homePage = false) {
   });
 }
 
+// ------------------- Entry Page -------------------
+export function runEntryPage() {
+  setTimeout(() => {
+    window.location.href = "index.html"; // your login page
+  }, 4000); // match your CSS animation timing
+}
+
+
 
 
 
