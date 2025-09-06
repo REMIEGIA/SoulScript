@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SoulScript</title>
-  <link rel="stylesheet" href="entry.css">
+  <title>SoulScript Entry</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <!-- Replace text with <img src="images/logo.png" class="logo"> if you have a logo -->
-  <div class="logo">SoulScript</div>
+<body class="entry-page">
+  <div class="entry-logo">SoulScript</div>
 
-  <script type="module">
-  import { runEntryPage } from './scripts.js';
-  runEntryPage();
-</script>
+  <script src="scripts.js"></script>
+  <script>
+    // Call the entry redirect only for this page
+    if (document.body.classList.contains("entry-page")) {
+      runEntryPage();
+    }
+  </script>
 </body>
 </html>
+
+
 
