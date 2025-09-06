@@ -91,19 +91,28 @@ export function checkAuthRedirect(homePage = false) {
 
 // ------------------- Entry Page -------------------
 export function runEntryPage() {
+  // Check if entry has already been shown in this session
+  if (sessionStorage.getItem("entryShown")) {
+    // Skip entry page and go straight to login
+    window.location.href = "index.html";
+    return;
+  }
+
+  // Mark entry as shown
+  sessionStorage.setItem("entryShown", "true");
+
   const audio = document.getElementById("entrySound");
 
   if (audio) {
-    // restart from beginning, unmute & play
     audio.currentTime = 0;
     audio.muted = false;
     audio.play().catch(err => console.log("Autoplay blocked:", err));
   }
 
-  // redirect after animation
+  // Redirect after animation (same as CSS delay)
   setTimeout(() => {
     window.location.href = "index.html";
-  }, 4000); // same as CSS delay
+  }, 4000);
 }
 
 
