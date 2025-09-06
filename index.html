@@ -8,27 +8,37 @@
 </head>
 <body class="login-page">
 
-<div class="login-container">
-  <h2>Login</h2>
-  <input type="email" id="logEmail" placeholder="Email">
-  <input type="password" id="logPass" placeholder="Password">
-  <button id="loginBtn">Login</button>
-  <button id="toRegisterBtn">Register</button>
-  <p id="logMsg"></p>
-</div>
+  <!-- Entry Overlay -->
+  <div id="entryOverlay" class="entry-page">
+    <img src="images/logo.png" alt="SoulScript Logo" class="entry-logo">
+    <audio id="entrySound" src="audio/intro.mp3" autoplay muted playsinline></audio>
+  </div>
 
-<script type="module">
-  import { loginUser, checkAuthRedirect } from './scripts.js';
+  <!-- Login Form -->
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="email" id="logEmail" placeholder="Email">
+    <input type="password" id="logPass" placeholder="Password">
+    <button id="loginBtn">Login</button>
+    <button id="toRegisterBtn">Register</button>
+    <p id="logMsg"></p>
+  </div>
 
-  // Redirect if already logged in
-  checkAuthRedirect(false);
+  <script type="module">
+    import { loginUser, runEntryPage, checkAuthRedirect } from './scripts.js';
 
-  // Add event listeners
-  document.getElementById("loginBtn").addEventListener("click", loginUser);
-  document.getElementById("toRegisterBtn").addEventListener("click", () => {
-    window.location.href = "register.html";
-  });
-</script>
+    // Redirect if already logged in
+    checkAuthRedirect(false);
+
+    // Add event listeners
+    document.getElementById("loginBtn").addEventListener("click", loginUser);
+    document.getElementById("toRegisterBtn").addEventListener("click", () => {
+      window.location.href = "register.html";
+    });
+
+    // Run entry animation
+    runEntryPage();
+  </script>
 
 </body>
 </html>
