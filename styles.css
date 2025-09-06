@@ -12,23 +12,18 @@ body {
 }
 
 /* === Entry Page Styling (unique namespace: entry-) === */
-body.entry-page {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+#entryOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   background: black;
-  overflow: hidden;
-}
-
-.entry-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: entryFadeOut 1s ease-in-out forwards;
-  animation-delay: 3s; /* hide overlay after 3 seconds */
+  z-index: 9999;
+  overflow: hidden;
 }
 
 .entry-logo {
@@ -42,6 +37,11 @@ body.entry-page {
   0% { opacity: 0; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1.1); }
   100% { opacity: 1; transform: scale(1); }
+}
+
+.entry-hide {
+  animation: entryFadeOut 1s ease-in-out forwards;
+  animation-delay: 2s;
 }
 
 @keyframes entryFadeOut {
@@ -69,34 +69,11 @@ body.register-page .register-container {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-body.register-page h2 {
-  margin-bottom: 15px;
-  color: #4caf50;
-}
-
-body.register-page input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-body.register-page button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-body.register-page button:hover {
-  background-color: #45a049;
-}
+body.register-page h2 { color: #4caf50; margin-bottom: 15px; }
+body.register-page input,
+body.register-page button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; }
+body.register-page button { background-color: #4caf50; color: white; border: none; font-weight: bold; cursor: pointer; }
+body.register-page button:hover { background-color: #45a049; }
 
 /* --- Login Page Styles --- */
 body.login-page {
@@ -119,91 +96,24 @@ body.login-page .login-container {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-body.login-page h2 {
-  margin-bottom: 15px;
-  color: #4caf50;
-}
-
-body.login-page input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-body.login-page button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-body.login-page button:hover {
-  background-color: #45a049;
-}
+body.login-page h2 { color: #4caf50; margin-bottom: 15px; }
+body.login-page input,
+body.login-page button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; }
+body.login-page button { background-color: #4caf50; color: white; border: none; font-weight: bold; cursor: pointer; }
+body.login-page button:hover { background-color: #45a049; }
 
 /* --- Home Page Styles --- */
-body.home-page {
-  background-color: #f5f5f5;
-  padding: 20px;
-}
-
-body.home-page header {
-  background-color: #4caf50;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-body.home-page header button {
-  padding: 8px 16px;
-  margin-top: 10px;
-  background-color: #f44336;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
-
-body.home-page header button:hover {
-  background-color: #d32f2f;
-}
-
-body.home-page section {
-  background-color: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-body.home-page section h2 {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-body.home-page footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #777;
-}
+body.home-page { background-color: #f5f5f5; padding: 20px; }
+body.home-page header { background-color: #4caf50; color: white; text-align: center; padding: 25px; border-radius: 8px; margin-bottom: 20px; }
+body.home-page header button { padding: 8px 16px; margin-top: 10px; background-color: #f44336; border: none; border-radius: 5px; color: white; cursor: pointer; }
+body.home-page header button:hover { background-color: #d32f2f; }
+body.home-page section { background-color: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+body.home-page section h2 { margin-bottom: 10px; color: #333; }
+body.home-page footer { text-align: center; margin-top: 40px; color: #777; }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
   body.login-page .login-container,
-  body.register-page .register-container {
-    width: 90%;
-  }
-
-  body.home-page section {
-    margin: 10px 0;
-  }
+  body.register-page .register-container { width: 90%; }
+  body.home-page section { margin: 10px 0; }
 }
