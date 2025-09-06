@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SoulScript Entry</title>
+  <title>Welcome | SoulScript</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="entry-page">
-  <div class="entry-logo">SoulScript</div>
+  <div class="entry-container">
+    <img src="images/logo3.png" alt="SoulScript Logo" class="entry-logo">
+  </div>
 
-  <script src="scripts.js"></script>
-  <script>
-    // Call the entry redirect only for this page
-    if (document.body.classList.contains("entry-page")) {
-      runEntryPage();
-    }
+  <!-- Preload muted audio (autoplay allowed) -->
+  <audio id="entrySound" src="audio/intro.mp3" autoplay muted playsinline></audio>
+
+  <script type="module">
+    import { runEntryPage } from './scripts.js';
+    runEntryPage();
   </script>
 </body>
 </html>
-
-
-
