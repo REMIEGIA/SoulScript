@@ -19,34 +19,38 @@ body.entry-page {
   align-items: center;
   height: 100vh;
   background: black;
+  overflow: hidden;
 }
 
 .entry-container {
-  animation: fadeOut 1s ease-in-out forwards;
-  animation-delay: 3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: entryFadeOut 1s ease-in-out forwards;
+  animation-delay: 3s; /* hide overlay after 3 seconds */
 }
 
 .entry-logo {
   width: 200px;
   height: auto;
   opacity: 0;
-  animation: fadeZoom 2s ease-in-out forwards;
+  animation: entryFadeZoom 2s ease-in-out forwards;
 }
 
-@keyframes fadeZoom {
+@keyframes entryFadeZoom {
   0% { opacity: 0; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1.1); }
   100% { opacity: 1; transform: scale(1); }
 }
 
-@keyframes fadeOut {
-  to { opacity: 0; }
+@keyframes entryFadeOut {
+  to { opacity: 0; visibility: hidden; }
 }
-
 
 /* --- Register Page Styles --- */
 body.register-page {
-  background-image: url("images/logo3.jpg"); /* point to actual file */
+  background-image: url("images/logo3.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,7 +61,7 @@ body.register-page {
 }
 
 body.register-page .register-container {
-  background-color: rgba(255, 255, 255, 0.9); /* slightly transparent */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 10px;
   width: 300px;
@@ -96,7 +100,7 @@ body.register-page button:hover {
 
 /* --- Login Page Styles --- */
 body.login-page {
-  background-image: url("images/logo2.jpg"); /* same background */
+  background-image: url("images/logo3.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -104,15 +108,10 @@ body.login-page {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f4f8; */
 }
 
 body.login-page .login-container {
-  background-color: rgba(255, 255, 255, 0.9); /* slightly transparent */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 10px;
   width: 300px;
@@ -199,7 +198,8 @@ body.home-page footer {
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-  body.login-page .login-container {
+  body.login-page .login-container,
+  body.register-page .register-container {
     width: 90%;
   }
 
@@ -207,10 +207,3 @@ body.home-page footer {
     margin: 10px 0;
   }
 }
-
-
-
-
-
-
-
